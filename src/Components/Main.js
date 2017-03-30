@@ -34,8 +34,9 @@ class Main extends Component {
       ]
 
     })
-
   }
+
+  
   render() {
     console.log(this.state.name)
     return (
@@ -49,13 +50,21 @@ class Main extends Component {
             
           }}
           >
-              <div style={{marginLeft: '5%'}}><h1 style={{color: grey700}}>Todo List </h1></div><div style={{marginLeft:'auto', marginRight:'5%', marginTop: 7}}><IconButton><ListIcon/></IconButton></div>
-          
+            <div style={{marginLeft: '5%'}}>
+              <h1 style={{color: grey700}}>
+                Todo List 
+              </h1>
+            </div>
+            <div style={{marginLeft:'auto', marginRight:'10%', marginTop: 7}}>
+              <IconButton>
+                <ListIcon/>
+              </IconButton>
+            </div>
           </div>
           
           <TodoList 
-            style={{marginLeft: '10%'}}
             todos={this.state.todos}
+            
           />
           <br />
           <div style={{marginLeft: '5%'}}>
