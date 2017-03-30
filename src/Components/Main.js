@@ -76,7 +76,6 @@ class Main extends Component {
     console.log(this.state.todos)
     return (
       <MuiThemeProvider>
-      
        <Paper 
           style={{paddingBottom: '20px', marginTop: 100, marginRight: 20, marginLeft: 20}}>
           <div 
@@ -85,13 +84,13 @@ class Main extends Component {
             
           }}
           >
-            <div style={{marginLeft: '5%'}}>
+            <div style={{marginLeft: '44%'}}>
               <h1 style={{ textAlign: 'center', color: grey700}}>
                 Todo List 
               </h1>
             </div>
-            <div style={{marginLeft:'auto', marginRight:'10%', marginTop: 13}}>
-              <IconButton>
+            <div style={{ marginRight:'10%', marginTop: 13}}>
+              <IconButton >
                 <ListIcon/>
               </IconButton>
             </div>

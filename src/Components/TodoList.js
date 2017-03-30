@@ -29,9 +29,6 @@ class TodoList extends Component {
     </List>
     )
   }
-  
-  
-  
 }
   
 export default TodoList

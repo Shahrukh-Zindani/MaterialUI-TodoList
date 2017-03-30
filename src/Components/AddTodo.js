@@ -26,7 +26,7 @@ class AddTodo extends Component {
 			<MuiThemeProvider>
 				<div>
 					<form id="myForm">
-					<Paper style={{width: '90%'}} zDepth={1}>
+					<Paper style={{width: '90%', leftMargin: '15px'}} zDepth={1}>
 					<div 
 						style={{marginLeft: '10px'}}
 					>
