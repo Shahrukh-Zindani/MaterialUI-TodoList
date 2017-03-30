@@ -17,6 +17,7 @@ class TodoList extends Component {
         key={ todo.id } 
         todo={ todo.task } 
         id = {todo.id}
+        checked = { todo.checked }
         handleRemove={this.props.handleRemove}
         handleCheck={this.props.handleCheck}
       />

@@ -43,7 +43,6 @@ class Main extends Component {
   }
 
   handleRemove(id) {
-      console.log(this.state)
       const finalTodos = this.state.todos.filter((todo) => {
         if(todo.id != id) return todo
       });
@@ -51,12 +50,15 @@ class Main extends Component {
         todos: finalTodos,
         open: true,
       });
-    }
+  }
+
   handleCheck(id) {
+    // console.log('shah')
     const finalTodos = this.state.todos.map((todo) => {
         if(todo.id === id){
-
-        } return todo.checked == true
+          todo.checked =! todo.checked
+        } 
+        return todo
       });
       this.setState({
         todos: finalTodos,
@@ -98,7 +100,7 @@ class Main extends Component {
           <TodoList 
             todos={this.state.todos}
             handleRemove={this.handleRemove} 
-            handleChecked={this.handleChecked} 
+            handleCheck={this.handleCheck} 
           />
           <br />
           <div style={{marginLeft: '5%'}}>

@@ -9,6 +9,17 @@ import IconButton from 'material-ui/IconButton';
 import Divider from 'material-ui/Divider';
 import { ListItem } from 'material-ui/List';
 
+const listElementStyles = {
+	color: blueGrey800,
+	fontSize: 18,
+	lineHeight: '24px',
+}
+
+const listElementCheckedStyles = {
+	...listElementStyles,
+	textDecoration: 'line-through',
+}
+
 class Todo extends Component{
 	constructor(props) {
 		super(props);
@@ -26,11 +37,12 @@ class Todo extends Component{
 	}
 
 	render() {
+		const listStyles = !this.props.checked ? listElementStyles: listElementCheckedStyles;
 		return(
 			<ListItem style={{width: '90%'}}
 						 rightIconButton={<div style={{display: 'flex'}}><IconButton onClick={this.onClick} iconStyle={{color: red600}}><DeleteIcon/></IconButton><Checkbox onCheck={this.onCheck}style={{marginTop:12}}/></div>}>
 			<div style={{display: 'flex'}}>
-				<li style={{color: blueGrey800, fontSize: 18, lineHeight: '24px', marginBottom: '3px'}} >
+				<li style={listStyles}>
 					{this.props.todo}
 				</li>
 			</div>
