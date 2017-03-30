@@ -22,8 +22,10 @@ class Main extends Component {
       todos: [],
     }
     this.handleClick = this.handleClick.bind(this);
+    this.handleRemove = this.handleRemove.bind(this);
   }
   handleClick(todo) {
+    console.log(this.state)
     this.setState({
       todos: [
         ...this.state.todos,
@@ -35,10 +37,20 @@ class Main extends Component {
 
     })
   }
+  // var that = this;
+  handleRemove(id) {
+      console.log(this.state)
+      const finalTodos = this.state.todos.filter((todo) => {
+        if(todo.id != id) return todo
+      });
+      this.setState({
+        todos: finalTodos,
+      });
+    }
 
   
   render() {
-    console.log(this.state.name)
+    console.log(this.state.todos)
     return (
       <MuiThemeProvider>
       
@@ -51,7 +63,7 @@ class Main extends Component {
           }}
           >
             <div style={{marginLeft: '5%'}}>
-              <h1 style={{color: grey700}}>
+              <h1 style={{ textAlign: 'center', color: grey700}}>
                 Todo List 
               </h1>
             </div>
@@ -64,7 +76,7 @@ class Main extends Component {
           
           <TodoList 
             todos={this.state.todos}
-            
+            handleRemove={this.handleRemove} 
           />
           <br />
           <div style={{marginLeft: '5%'}}>

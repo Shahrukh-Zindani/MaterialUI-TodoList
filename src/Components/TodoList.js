@@ -1,25 +1,35 @@
 // external dependencies
-import React from 'react';
+import React, {Component} from 'react';
 import List from 'material-ui/List';
 // internal dependecies
 import Todo from './Todo';
 
-const TodoList = (props) => {
+class TodoList extends Component {
+  constructor(props) {
+    super(props);
+    
+  }
+  render() {
 
-  var todoNode = props.todos.map((todo) => {
+     var todoNode = this.props.todos.map((todo) => {
     return (
       <Todo 
         key={ todo.id } 
         todo={ todo.task } 
+        id = {todo.id}
+        handleRemove={this.props.handleRemove}
       />
     )
   })
-  return(
-    <List style={{marginLeft: '5%'}}>
+    return(
+      <List style={{marginLeft: '5%'}}>
       <ul>{ todoNode }</ul>
     </List>
-    
-  ) 
+    )
+  }
+  
+  
+  
 }
   
 export default TodoList
