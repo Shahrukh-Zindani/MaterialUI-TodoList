@@ -1,5 +1,8 @@
+// external dependencies
 import React, { Component } from 'react';
 import Paper from 'material-ui/Paper'
+
+// internal dependecies
 import Todo from './Todo';
 
 
@@ -9,11 +12,16 @@ class TodoList extends Component {
   }
   render() {
   	var todoNode = this.props.todos.map((todo) => {
-  		return <Todo key={todo.id} todo={todo.task} />
+  		return (
+        <Todo 
+          key={ todo.id } 
+          todo={ todo.task } 
+        />
+      )
   	})
   	return(
   		<div style= {{marginLeft: '5%'}}>
-  			<ul>{todoNode}</ul>
+  			<ul>{ todoNode }</ul>
   		</div>
   		
   	)

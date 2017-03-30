@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
-import Paper from 'material-ui/Paper';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Paper from 'material-ui/Paper';
+import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 
 class AddTodo extends Component {
@@ -23,12 +23,14 @@ class AddTodo extends Component {
 				<div>
 					<form id="myForm">
 					<Paper style={{width: '95%'}} zDepth={5}>
-					<div style= {{marginLeft: '10px'}}>
+					<div 
+						style= {{marginLeft: '10px'}}
+					>
 						<TextField 
 							hintText="What needs to be done?"
 							className="AddText" 
 							fullWidth={true}
-							ref= {(input) => {this.input= input}}
+							ref= { (input) => {this.input= input} }
 						>
 						</TextField>
 					</div>
