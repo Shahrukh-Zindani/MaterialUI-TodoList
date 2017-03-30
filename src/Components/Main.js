@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import IconButton from 'material-ui/IconButton';
+import Snackbar from 'material-ui/Snackbar';
 import ListIcon from 'material-ui/svg-icons/action/list';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Paper from 'material-ui/Paper';
@@ -20,9 +21,11 @@ class Main extends Component {
     super();
     this.state = {
       todos: [],
+      open: false,
     }
     this.handleClick = this.handleClick.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
+    this.handleCheck = this.handleCheck.bind(this);
   }
   handleClick(todo) {
     console.log(this.state)
@@ -32,12 +35,13 @@ class Main extends Component {
         {
           id:uuid(),
           task:todo,
+          checked:false,
         }
       ]
 
     })
   }
-  // var that = this;
+
   handleRemove(id) {
       console.log(this.state)
       const finalTodos = this.state.todos.filter((todo) => {
@@ -45,8 +49,25 @@ class Main extends Component {
       });
       this.setState({
         todos: finalTodos,
+        open: true,
       });
     }
+  handleCheck(id) {
+    const finalTodos = this.state.todos.map((todo) => {
+        if(todo.id === id){
+
+        } return todo.checked == true
+      });
+      this.setState({
+        todos: finalTodos,
+      });
+  } 
+
+  handleRequestClose = () => {
+    this.setState({
+      open: false,
+    })
+  }
 
   
   render() {
@@ -67,7 +88,7 @@ class Main extends Component {
                 Todo List 
               </h1>
             </div>
-            <div style={{marginLeft:'auto', marginRight:'10%', marginTop: 7}}>
+            <div style={{marginLeft:'auto', marginRight:'10%', marginTop: 13}}>
               <IconButton>
                 <ListIcon/>
               </IconButton>
@@ -77,12 +98,20 @@ class Main extends Component {
           <TodoList 
             todos={this.state.todos}
             handleRemove={this.handleRemove} 
+            handleChecked={this.handleChecked} 
           />
           <br />
           <div style={{marginLeft: '5%'}}>
            <AddTodo handleClick={this.handleClick}/>
           </div>
+          <Snackbar
+          open={this.state.open}
+          message="Todo Item deleted"
+          autoHideDuration={2000}
+          onRequestClose={this.handleRequestClose}
+        />
         </Paper>
+        
       
       </MuiThemeProvider>
       

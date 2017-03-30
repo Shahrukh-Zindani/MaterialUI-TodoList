@@ -7,7 +7,7 @@ import Todo from './Todo';
 class TodoList extends Component {
   constructor(props) {
     super(props);
-    
+
   }
   render() {
 
@@ -18,6 +18,7 @@ class TodoList extends Component {
         todo={ todo.task } 
         id = {todo.id}
         handleRemove={this.props.handleRemove}
+        handleCheck={this.props.handleCheck}
       />
     )
   })
