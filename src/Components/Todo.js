@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { blueGrey800 } from 'material-ui/styles/colors';
 
 const Todo = (props) => {

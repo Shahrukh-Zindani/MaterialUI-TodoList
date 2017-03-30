@@ -24,13 +24,13 @@ class AddTodo extends Component {
 					<form id="myForm">
 					<Paper style={{width: '95%'}} zDepth={5}>
 					<div 
-						style= {{marginLeft: '10px'}}
+						style={{marginLeft: '10px'}}
 					>
 						<TextField 
 							hintText="What needs to be done?"
 							className="AddText" 
 							fullWidth={true}
-							ref= { (input) => {this.input= input} }
+							ref={ (input) => {this.input= input} }
 						>
 						</TextField>
 					</div>
