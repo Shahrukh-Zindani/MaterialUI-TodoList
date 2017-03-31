@@ -3,16 +3,20 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
-import Snackbar from 'material-ui/Snackbar';
 
 class AddTodo extends Component {
 	constructor() {
 		super();
 		this.onClick = this.onClick.bind(this);
+		this.state = {
+			inputValue: '',
+		}
+		
 	}
+
 	onClick(event) {
 		event.preventDefault();
-		var todo = this.input.getValue(); 
+		var todo = this.state.inputValue;
 		if(todo=='') return 
 		else {
 			var form = document.getElementById("myForm");
@@ -33,7 +37,7 @@ class AddTodo extends Component {
 							hintText="What needs to be done?"
 							className="AddText" 
 							fullWidth={true}
-							ref={ (input) => {this.input= input} }
+							onChange={(e) => this.setState({ inputValue: e.target.value })}
 						>
 						</TextField>
 					</div>
