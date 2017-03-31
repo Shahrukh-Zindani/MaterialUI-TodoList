@@ -76,7 +76,7 @@ class Main extends Component {
     return (
       <MuiThemeProvider>
        <Paper 
-          style={{paddingBottom: '20px', marginTop: 100, marginRight: 20, marginLeft: 40}}>
+          style={{paddingBottom: '20px', marginTop: 100, marginBottom: 100, marginRight: 20, marginLeft: 40}}>
           <div 
           style={{
             display: 'flex',

@@ -11,7 +11,6 @@ class AddTodo extends Component {
 		this.state = {
 			inputValue: '',
 		}
-		
 	}
 
 	onClick(event) {
