@@ -9,7 +9,6 @@ class AddTodo extends Component {
 	constructor() {
 		super();
 		this.onClick = this.onClick.bind(this);
-		
 	}
 	onClick(event) {
 		event.preventDefault();

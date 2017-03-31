@@ -73,11 +73,10 @@ class Main extends Component {
 
   
   render() {
-    console.log(this.state.todos)
     return (
       <MuiThemeProvider>
        <Paper 
-          style={{paddingBottom: '20px', marginTop: 100, marginRight: 20, marginLeft: 20}}>
+          style={{paddingBottom: '20px', marginTop: 100, marginRight: 20, marginLeft: 40}}>
           <div 
           style={{
             display: 'flex',

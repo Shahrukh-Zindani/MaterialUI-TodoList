@@ -40,7 +40,7 @@ class Todo extends Component{
 		const listStyles = !this.props.checked ? listElementStyles: listElementCheckedStyles;
 		return(
 			<ListItem style={{width: '90%'}}
-						 rightIconButton={<div style={{display: 'flex'}}><IconButton onClick={this.onClick} iconStyle={{color: red600}}><DeleteIcon/></IconButton><Checkbox onCheck={this.onCheck}style={{marginTop:12}}/></div>}>
+						 rightIconButton={<div style={{display: 'flex'}}><IconButton tooltip='remove' tooltipPosition='bottom-right' onClick={this.onClick} iconStyle={{color: red600}}><DeleteIcon/></IconButton><Checkbox onCheck={this.onCheck}style={{marginTop:12}}/></div>}>
 			<div style={{display: 'flex'}}>
 				<li style={listStyles}>
 					{this.props.todo}
