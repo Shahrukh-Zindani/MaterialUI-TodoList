@@ -22,6 +22,7 @@ class AddTodo extends Component {
 			var form = document.getElementById("myForm");
 			form.reset()
 			this.props.handleClick(todo);
+			this.state.inputValue = ''
 		}
 	}
 	render() {
