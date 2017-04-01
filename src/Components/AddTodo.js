@@ -1,10 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 
 class AddTodo extends Component {
+	
+	static propTypes = { 
+	 		handleClick: PropTypes.func,
+	}
+
 	constructor() {
 		super();
 		this.onClick = this.onClick.bind(this);
@@ -24,7 +29,11 @@ class AddTodo extends Component {
 			this.state.inputValue = ''
 		}
 	}
+
 	render() {
+		 const {
+      handleClick, 
+    } = this.props;
 		return(
 			<MuiThemeProvider>
 				<div>
